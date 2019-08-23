@@ -1,0 +1,19 @@
+<p appSimpleStyle>server2 works!</p>
+<label>Server Name: </label>
+<input type="text" class="form-control" (input)="onUpdateServerName($event)">
+<input type="text" class="form-control" [disabled]="allowNewServer" [(ngModel)]="serverName">
+
+<button class="button" [disabled]="allowNewServer" (click)="onCreateServer()">Add Server</button>
+
+<p>Server creations {{ allowNewServer == false ? 'Allowed' : 'Disabled' }}</p>
+
+<p *ngIf="serverCreated; else elseTemplate">
+  Server is created. Name : {{ serverName }}
+</p>
+<ng-template #elseTemplate>
+  <p>No Server created.</p>
+</ng-template>
+
+<p [ngStyle]="{background: getColor()}" [ngClass]="{Online: serverStatus === 'Online'}">Server with ID : {{ serverID }} is {{ serverStatus }}</p>
+
+<button [disabled]="isDisabled">Disable Me</button>

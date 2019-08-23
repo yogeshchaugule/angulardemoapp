@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './../app.component.html',
+  styleUrls: ['./../app.component.css']
 })
 export class AppComponent {
-  title = 'Demo App';
-  servers = [];
+  title = 'testing-app';
+  servers;
 
   OnAddServer() {
     this.servers.push('Another Server Added');
